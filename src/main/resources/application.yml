@@ -1,0 +1,20 @@
+server:
+  port: 4444
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: 1234
+    url: jdbc:sqlserver://localhost:1433;databaseName=projects_sem2
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      hibernate.dialect: org.hibernate.dialect.SQLServer2012Dialect
+      hibernate.current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+      hibernate.enable_lazy_load_no_trans: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
